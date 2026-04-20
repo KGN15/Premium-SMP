@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse all available commands on Premium Minecraft SMP server">
+    <title>Commands - Premium Minecraft SMP</title>
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="nav-brand">
+                <a href="./index.html"><img src="./public/logo.svg" alt="Server Logo" class="nav-logo"></a>
+                <a href="./index.html"><span class="nav-title">Premium SMP</span></a>
+            </div>
+
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="./index.html" class="nav-link">Home</a></li>
+                <li><a href="./commands.html" class="nav-link active">Commands</a></li>
+                <li><a href="./store.html" class="nav-link">Store</a></li>
+                <li><a href="./staff.html" class="nav-link">Staff</a></li>
+                <li><a href="./stats.html" class="nav-link">Statistics</a></li>
+                <li><a href="#" class="nav-link discord-link" id="discordLink">
+                    <svg class="discord-icon" width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.317 4.492c-1.53-.69-3.17-1.2-4.885-1.49a.075.075 0 0 0-.079.036c-.21.369-.444.85-.608 1.23a18.566 18.566 0 0 0-5.487 0 12.36 12.36 0 0 0-.617-1.23A.077.077 0 0 0 8.562 3c-1.714.29-3.354.8-4.885 1.491a.07.07 0 0 0-.032.027C.533 9.093-.32 13.555.099 17.961a.08.08 0 0 0 .031.055 20.03 20.03 0 0 0 5.993 2.98.078.078 0 0 0 .084-.026 13.83 13.83 0 0 0 1.226-1.963.074.074 0 0 0-.041-.104 13.201 13.201 0 0 1-1.872-.878.075.075 0 0 1-.008-.125c.126-.093.252-.19.372-.287a.075.075 0 0 1 .078-.01c3.927 1.764 8.18 1.764 12.061 0a.075.075 0 0 1 .079.009c.12.098.245.195.372.288a.075.075 0 0 1-.006.125c-.598.344-1.22.635-1.873.877a.075.075 0 0 0-.041.105c.36.687.772 1.341 1.225 1.962a.077.077 0 0 0 .084.028 19.963 19.963 0 0 0 6.002-2.981.076.076 0 0 0 .032-.054c.5-5.094-.838-9.52-3.549-13.442a.06.06 0 0 0-.031-.028zM8.02 15.278c-1.182 0-2.157-1.069-2.157-2.38 0-1.312.956-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.956 2.38-2.157 2.38zm7.975 0c-1.183 0-2.157-1.069-2.157-2.38 0-1.312.955-2.38 2.157-2.38 1.21 0 2.176 1.077 2.157 2.38 0 1.312-.946 2.38-2.157 2.38z"/>
+                    </svg>
+                    Discord
+                </a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-header">
+        <div class="container">
+            <h1>Server Commands</h1>
+            <p>Browse all available commands and learn how to use them</p>
+        </div>
+    </div>
+
+    <section class="section commands-section">
+        <div class="container">
+            <div class="commands-controls">
+                <div class="search-box">
+                    <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                    <input type="text" id="commandSearch" placeholder="Search commands..." class="search-input">
+                </div>
+
+                <div class="category-filters" id="categoryFilters">
+                    <button class="filter-btn active" data-category="all">All</button>
+                    <button class="filter-btn" data-category="essential">Essential</button>
+                    <button class="filter-btn" data-category="economy">Economy</button>
+                    <button class="filter-btn" data-category="teleport">Teleport</button>
+                    <button class="filter-btn" data-category="social">Social</button>
+                    <button class="filter-btn" data-category="admin">Admin</button>
+                </div>
+            </div>
+
+            <div class="commands-list" id="commandsList">
+                <div class="command-card" data-category="essential">
+                    <div class="command-header">
+                        <h3>/spawn</h3>
+                        <span class="command-badge badge-essential">Essential</span>
+                    </div>
+                    <p class="command-description">Teleport to the server spawn point</p>
+                    <div class="command-usage">
+                        <strong>Usage:</strong> <code>/spawn</code>
+                    </div>
+                </div>
+
+                <div class="command-card" data-category="essential">
+                    <div class="command-header">
+                        <h3>/sethome</h3>
+                        <span class="command-badge badge-essential">Essential</span>
+                    </div>
+                    <p class="command-description">Set your home location at your current position</p>
+                    <div class="command-usage">
+                        <strong>Usage:</strong> <code>/sethome [name]</code>
+                    </div>
+                    <div class="command-examples">
+                        <strong>Examples:</strong>
+                        <ul>
+                            <li><code>/sethome</code> - Set default home</li>
+                            <li><code>/sethome base</code> - Set named home "base"</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="command-card" data-category="essential">
+                    <div class="command-header">
+                        <h3>/home</h3>
+                        <span class="command-badge badge-essential">Essential</span>
+                    </div>
+                    <p class="command-description">Teleport to one of your saved home locations</p>
+                    <div class="command-usage">
+                        <strong>Usage:</strong> <code>/home [name]</code>
+                    </div>
+                </div>
+
+                <div class="command-card" data-category="teleport">
+                    <div class="command-header">
+                        <h3>/tpa</h3>
+                        <span class="command-badge badge-teleport">Teleport</span>
+                    </div>
+                    <p class="command-description">Request to teleport to another player</p>
+                    <div class="command-usage">
+                        <strong>Usage:</strong> <code>/tpa &lt;player&gt;</code>
+                    </div>
+                    <div class="command-examples">
+                        <strong>Example:</strong> <code>/tpa Steve</code>
+                    </div>
+                </div>
+
+                <div class="command-card" data-category="teleport">
+                    <div class="command-header">
+                        <h3>/tpaccept</h3>
+                        <span class="command-badge badge-teleport">Teleport</span>
+                    </div>
+                    <p class="command-description">Accept a pending teleport request</p>
+                    <div class="command-usage">
+                        <strong>Usage:</strong> <code>/tpaccept</code>
+                    </div>
+                </div>
+
+                <div class="command-card" data-category="economy">
+                    <div class="command-header">
+                        <h3>/balance</h3>
+                        <span class="command-badge badge-economy">Economy</span>
+                    </div>
+                    <p class="command-description">Check your current balance</p>
+                    <div class="command-usage">
+                        <strong>Usage:</strong> <code>/balance [player]</code>
+                    </div>
+                </div>
+
+                <div class="command-card" data-category="economy">
+                    <div class="command-header">
+                        <h3>/pay</h3>
+                        <span class="command-badge badge-economy">Economy</span>
+                    </div>
+                    <p class="command-description">Send money to another player</p>
+                    <div class="command-usage">
+                        <strong>Usage:</strong> <code>/pay &lt;player&gt; &lt;amount&gt;</code>
+                    </div>
+                    <div class="command-examples">
+                        <strong>Example:</strong> <code>/pay Steve 1000</code>
+                    </div>
+                </div>
+
+                <div class="command-card" data-category="economy">
+                    <div class="command-header">
+                        <h3>/shop</h3>
+                        <span class="command-badge badge-economy">Economy</span>
+                    </div>
+                    <p class="command-description">Open the server shop GUI</p>
+                    <div class="command-usage">
+                        <strong>Usage:</strong> <code>/shop</code>
+                    </div>
+                </div>
+
+                <div class="command-card" data-category="social">
+                    <div class="command-header">
+                        <h3>/msg</h3>
+                        <span class="command-badge badge-social">Social</span>
+                    </div>
+                    <p class="command-description">Send a private message to a player</p>
+                    <div class="command-usage">
+                        <strong>Usage:</strong> <code>/msg &lt;player&gt; &lt;message&gt;</code>
+                    </div>
+                </div>
+
+                <div class="command-card" data-category="social">
+                    <div class="command-header">
+                        <h3>/party</h3>
+                        <span class="command-badge badge-social">Social</span>
+                    </div>
+                    <p class="command-description">Create or manage your party</p>
+                    <div class="command-usage">
+                        <strong>Usage:</strong> <code>/party &lt;create|invite|leave|kick&gt;</code>
+                    </div>
+                </div>
+
+                <div class="command-card" data-category="essential">
+                    <div class="command-header">
+                        <h3>/kit</h3>
+                        <span class="command-badge badge-essential">Essential</span>
+                    </div>
+                    <p class="command-description">Claim available kits based on your rank</p>
+                    <div class="command-usage">
+                        <strong>Usage:</strong> <code>/kit [name]</code>
+                    </div>
+                </div>
+
+                <div class="command-card" data-category="admin">
+                    <div class="command-header">
+                        <h3>/fly</h3>
+                        <span class="command-badge badge-admin">Admin</span>
+                    </div>
+                    <p class="command-description">Toggle flight mode (VIP+ only)</p>
+                    <div class="command-usage">
+                        <strong>Usage:</strong> <code>/fly</code>
+                    </div>
+                </div>
+
+                <div class="command-card" data-category="admin">
+                    <div class="command-header">
+                        <h3>/nickname</h3>
+                        <span class="command-badge badge-admin">Admin</span>
+                    </div>
+                    <p class="command-description">Change your display name (Premium+ only)</p>
+                    <div class="command-usage">
+                        <strong>Usage:</strong> <code>/nickname &lt;name&gt;</code>
+                    </div>
+                </div>
+
+                <div class="command-card" data-category="essential">
+                    <div class="command-header">
+                        <h3>/playtime</h3>
+                        <span class="command-badge badge-essential">Essential</span>
+                    </div>
+                    <p class="command-description">Check your total playtime on the server</p>
+                    <div class="command-usage">
+                        <strong>Usage:</strong> <code>/playtime [player]</code>
+                    </div>
+                </div>
+
+                <div class="command-card" data-category="essential">
+                    <div class="command-header">
+                        <h3>/vote</h3>
+                        <span class="command-badge badge-essential">Essential</span>
+                    </div>
+                    <p class="command-description">Get voting links and check your vote count</p>
+                    <div class="command-usage">
+                        <strong>Usage:</strong> <code>/vote</code>
+                    </div>
+                </div>
+            </div>
+
+            <div class="no-results" id="noResults" style="display: none;">
+                <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.35-4.35"></path>
+                </svg>
+                <p>No commands found</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Premium SMP</h3>
+                    <p>The ultimate Minecraft survival multiplayer experience</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="./index.html">Home</a></li>
+                        <li><a href="./commands.html">Commands</a></li>
+                        <li><a href="./store.html">Store</a></li>
+                        <li><a href="./staff.html">Staff Team</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Premium SMP. Not affiliated with Mojang or Microsoft.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="notification" id="notification">
+        <div class="notification-content">
+            <span class="notification-message" id="notificationMessage"></span>
+            <button class="notification-close" id="notificationClose">&times;</button>
+        </div>
+    </div>
+
+    <script type="module" src="./js/commands.js"></script>
+</body>
+</html>
